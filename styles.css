@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #f4f4f4;
+    color: #222;
+}
+
+body.dark {
+    background: #1e1e1e;
+    color: #f4f4f4;
+}
+#welcome-section {
+    text-align: center;
+    background-color: #0F2E2E;
+    color: white;
+}
+section,
+header {
+    background: #fff;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+}
+
+body.dark section,
+body.dark header {
+    background: #2b2b2b;
+}
+
+#auth-form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: stretch;
+}
+
+input,
+select,
+button {
+    padding: 8px;
+    margin: 4px 0;
+    font-size: 1rem;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+}
+
+li.completed span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: 12px;
+}
+
+footer p {
+    color: #0F2E2E;
+    font-size: 14px;
+}
+
+hr {
+    color: #1d6d6d;
+    width: 30%;
+    border: 1.5px solid #1d6d6d;
+    border-radius: 4px;
+}
