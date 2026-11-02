@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tarefas Inteligente</title>
+    <link rel="shortcut icon" href="images/RT.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+    <section id="welcome-section">
+        <h2 id="welcome-message">Welcome to</h2>
+        <h1>Task Manager</h1>
+    </section>
+    <!-- Login Section -->
+    <section id="login-section">
+        <form id="auth-form">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="exemplo@email.com" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Mínimo 6 caracteres" required>
+
+            <button type="submit" id="login-button">Login</button>
+            <button type="button" id="signup-button">Signup</button>
+
+            <p id="auth-error" class="hidden"></p>
+        </form>
+    </section>
+
+    <!-- Main -->
+    <main id="main-section" class="hidden">
+        <header>
+            <h1 id="welcome-message">Hello!</h1>
+
+            <div>
+                <p id="current-datetime"></p>
+                <button id="theme-toggle">Change Mode ☀️🌙</button>
+                <button id="logout-button">Logout</button>
+            </div>
+        </header>
+
+        <!-- Task Form -->
+        <section>
+            <h2>Add task</h2>
+
+            <form id="task-form">
+                <label for="task-title">Title</label>
+                <input type="text" id="task-title" placeholder="Ex.: Estudar JavaScript">
+
+                <label for="task-priority">Priority</label>
+                <select id="task-priority">
+                    <option value="baixa">Low</option>
+                    <option value="media" selected>Medium</option>
+                    <option value="alta">High</option>
+                </select>
+
+                <button type="submit">Add +</button>
+                <p id="task-error" class="hidden"></p>
+            </form>
+        </section>
+
+        <!-- Counters and Filters -->
+        <section>
+            <h2>Tasks</h2>
+
+            <p>
+                Active: <span id="active-count">0</span> |
+                Completed: <span id="completed-count">0</span>
+            </p>
+
+            <div id="filters">
+                <button data-filter="all" class="active">All</button>
+                <button data-filter="active">Active</button>
+                <button data-filter="completed">Completed</button>
+            </div>
+
+            <ul id="task-list"></ul>
+            <p id="empty-message" class="hidden">There are no tasks right now.</p>
+        </section>
+
+        <!-- API weather -->
+        <section>
+            <h2>Weather in Lisbon</h2>
+            <p id="weather-info">A carregar...</p>
+        </section>
+    </main>
+
+    <footer class="text-center mb-3">
+        <br>
+        <hr>
+        <p><i>© 2026 Raquel Terruta.</i> Todos os direitos reservados.</p><br>
+    </footer>
+
+    <!-- JS bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
