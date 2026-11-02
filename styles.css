@@ -37,6 +37,7 @@ body.dark header {
     flex-direction: column;
     align-content: center;
     align-items: stretch;
+    padding: 0 25%;
 }
 
 input,
