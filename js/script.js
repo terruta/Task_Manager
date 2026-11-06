@@ -76,3 +76,48 @@ function login() {
 
 
 
+
+//////////////////////////////////////////////////// Switch mode /////////////
+let myMode = document.getElementById("mode_switch");
+let myBody = document.body; // explicit
+
+myMode.addEventListener(
+    "click", () => {
+        darkMode = !darkMode; // this way the btn myMode can function as a toggler
+        applyMode(darkMode);
+    }
+)
+// let storedMode/storedTheme =
+function applyMode(isDark) {
+    if (isDark) {
+        myBody.style.backgroundColor = "black";
+        myBody.style.color = "white";
+        myMode.style.backgroundColor = "white";
+        myMode.style.color = "black";
+        myMode.textContent = "☀️";
+    } else {
+        // light mode styles:
+        myBody.style.backgroundColor = "white";
+        myBody.style.color = "black";
+        myMode.style.backgroundColor = "black";
+        myMode.style.color = "white";
+        myMode.textContent = "🌙";
+    }
+}
+
+function applyMode(isDark) {
+    if (isDark) {
+        myBody.style.backgroundColor = "black";
+        myBody.style.color = "white";
+        myMode.style.backgroundColor = "white";
+        myMode.style.color = "black";
+        myMode.textContent = "☀️";
+    } else {
+        // light mode styles:
+        myBody.style.backgroundColor = "white";
+        myBody.style.color = "black";
+        myMode.style.backgroundColor = "black";
+        myMode.style.color = "white";
+        myMode.textContent = "🌙";
+    }
+}
