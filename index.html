@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestor de Tarefas Inteligente</title>
+    <title>Task Manager</title>
     <link rel="shortcut icon" href="images/RT.svg" type="image/x-icon">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <!-- js -->
-    <script src="script.js" defer></script>
+    <script src="js/script.js" defer></script>
 
 </head>
 
 <body>
+    <header>
+            <p id="current-datetime"></p>
+            <button id="theme-toggle">Change Mode ☀️🌙</button>
+            <button id="logout-button">Logout</button>
+    </header>
     <section id="welcome-section">
-        <h2 id="welcome-message">Welcome to</h2>
-        <h1>Task Manager</h1>
+        <h2 id="hi-user"></h2>
+        <h1 id="welcome-message">Welcome to Task Manager</h1>
     </section>
     <!-- Login Section -->
     <section id="login-section">
@@ -27,8 +31,8 @@
             <label for="password">Password</label>
             <input type="password" id="password" placeholder="Insert password here." required>
 
-            <button type="submit" id="login-button">Login  <i class="bi bi-door-open-fill"></i><i class="bi bi-arrow-bar-left"></i></button>
-            <button type="button" id="signup-button">Signup  <i class = "bi bi-person-fill-add"></i></button>
+            <button type="submit" id="login-button">Login <i class="bi bi-door-open-fill"></i><i class="bi bi-arrow-bar-left"></i></button>
+            <button type="button" id="signup-button">Signup <i class="bi bi-person-fill-add"></i></button>
 
             <p id="auth-error" class="hidden"></p>
         </form>
@@ -36,16 +40,6 @@
 
     <!-- Main -->
     <main id="main-section" class="hidden">
-        <header>
-            <h1 id="welcome-message">Hello!</h1>
-
-            <div>
-                <p id="current-datetime"></p>
-                <button id="theme-toggle">Change Mode ☀️🌙</button>
-                <button id="logout-button">Logout</button>
-            </div>
-        </header>
-
         <!-- Task Form -->
         <section id="tasks">
             <h2>Add task</h2>

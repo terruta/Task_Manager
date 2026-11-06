@@ -25,7 +25,7 @@ function checkLoginStatus() {
         loggedInMessage.textContent = `Hi ${storedUser}!`;
         logoutBtn.classList.remove("hidden");
         loginSection.classList.add("hidden")
-        myTasks.classList.remove(".hidden");
+        myTasks.classList.remove("hidden");
     } else {
         logoutBtn.classList.add("hidden"); 
         // if there is no user logged, logoutBtn stays hidden.
@@ -88,22 +88,6 @@ myMode.addEventListener(
     }
 )
 // let storedMode/storedTheme =
-function applyMode(isDark) {
-    if (isDark) {
-        myBody.style.backgroundColor = "black";
-        myBody.style.color = "white";
-        myMode.style.backgroundColor = "white";
-        myMode.style.color = "black";
-        myMode.textContent = "☀️";
-    } else {
-        // light mode styles:
-        myBody.style.backgroundColor = "white";
-        myBody.style.color = "black";
-        myMode.style.backgroundColor = "black";
-        myMode.style.color = "white";
-        myMode.textContent = "🌙";
-    }
-}
 
 function applyMode(isDark) {
     if (isDark) {
