@@ -35,7 +35,6 @@ body.dark header {
 #auth-form {
     display: flex;
     flex-direction: column;
-    align-content: center;
     align-items: stretch;
     padding: 0 25%;
 }
@@ -66,11 +65,6 @@ li {
     border-bottom: 1px solid #ccc;
 }
 
-li.completed span {
-    text-decoration: line-through;
-    opacity: 0.6;
-}
-
 .hidden {
     display: none;
 }
@@ -99,3 +93,9 @@ hr {
     border: 1.5px solid #1d6d6d;
     border-radius: 4px;
 }
+
+.task-title.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
