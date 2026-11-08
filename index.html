@@ -53,9 +53,9 @@
                 <input type="text" id="task-title" placeholder="Ex.: Estudar JavaScript">
                 <label for="task-priority">Priority</label>
                 <select id="task-priority">
-                    <option value="baixa">Low</option>
-                    <option value="media" selected>Medium</option>
-                    <option value="alta">High</option>
+                    <option value="low">Low</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="high">High</option>
                 </select>
                 <button type="submit">Add +</button>
                 <p id="task-error" class="hidden"></p>
@@ -72,7 +72,7 @@
 
                 <div id="filters">
                 <button data-filter="all" class="filter-btn active">All</button>
-                <button data-filter="active" class="filter-btn">Active</button>
+                <button data-filter="active" class="filter-btn">Active</button>     
                 <button data-filter="completed" class="filter-btn">Completed</button>
             </div>
                 <ul id="task-list"></ul>

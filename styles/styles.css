@@ -32,11 +32,32 @@ body.dark header {
     background: #2b2b2b;
 }
 
+body.dark input,
+body.dark select,
+body.dark button {
+    background-color: #333;
+    color: #f4f4f4;
+    border: 1px solid #555;
+}
+
+body.dark a {
+    color: #7fd4d4;
+}
+
+body.dark footer p {
+    color: #7fd4d4;
+}
+
 #auth-form {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     padding: 0 25%;
+}
+
+#auth-form input,
+#auth-form button {
+    width: 100%;
 }
 
 input,
@@ -71,7 +92,8 @@ li {
 
 .active {
     font-weight: bold;
-    text-decoration: underline;
+    border: 2px solid #0F2E2E;
+    color: #0F2E2E
 }
 
 footer {
@@ -88,7 +110,6 @@ footer p {
 }
 
 hr {
-    color: #1d6d6d;
     width: 30%;
     border: 1.5px solid #1d6d6d;
     border-radius: 4px;
@@ -99,3 +120,35 @@ hr {
     opacity: 0.6;
 }
 
+.task-title {
+    flex: 1;
+}
+
+.task-priority {
+    font-size: 0.9rem;
+    color: #1d6d6d;
+
+}
+
+li button {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+}
+
+body.dark .task-priority {
+    color: #7fd4d4;
+}
+
+a {
+    text-decoration: none;
+    color: #1d6d6d;
+}
+
+a:hover {
+    text-decoration: underline;
+    color:#0F2E2E;
+}
+
+button {
+    border-radius: 4px;
+}

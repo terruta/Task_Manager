@@ -48,7 +48,6 @@ function checkLoginStatus() {
     }
 }
 
-
 loginForm.addEventListener("submit", (event) => {
     event.preventDefault(); // stops the page from reloading
     let emailValue = emailInput.value.trim();
@@ -75,10 +74,8 @@ function saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-
 function renderTasks() {
     taskList.textContent = ""; // clear the list before rendering
-
 
     let filteredTasks = tasks.filter((task) => {
         if (currentFilter === "active") return !task.completed;
@@ -86,41 +83,33 @@ function renderTasks() {
         return true; // default case - show all tasks
     });
 
-
     filteredTasks.forEach((task) => {
         let taskItem = document.createElement("li");
         taskItem.dataset.id = task.id;
-
 
         let titleSpan = document.createElement("span");
         titleSpan.className = "task-title";
         titleSpan.textContent = task.title;
 
-
         if (task.completed) {
             titleSpan.classList.add("completed");
         }
-
 
         let prioritySpan = document.createElement("span");
         prioritySpan.className = "task-priority";
         prioritySpan.textContent = task.priority;
 
-
         let completeBtn = document.createElement("button");
         completeBtn.className = "complete-btn";
         completeBtn.textContent = task.completed ? "Undo" : "Complete";
-
 
         let editBtn = document.createElement("button");
         editBtn.className = "edit-btn";
         editBtn.textContent = "Edit";
 
-
         let deleteBtn = document.createElement("button");
         deleteBtn.className = "delete-btn";
         deleteBtn.textContent = "Delete";
-
 
         taskItem.append(
             titleSpan,
@@ -133,14 +122,11 @@ function renderTasks() {
         taskList.appendChild(taskItem);
     }); // fim - forEach()
 
-
     let activeTasks = tasks.filter(task => !task.completed).length;
     let completedTasks = tasks.filter(task => task.completed).length;
 
-
     activeCount.textContent = activeTasks;
     completedCount.textContent = completedTasks;
-
 
     emptyMessage.classList.toggle("hidden", filteredTasks.length > 0);
 } // fim - renderTasks()
@@ -158,7 +144,6 @@ taskForm.addEventListener("submit", (event) => {
         return;
     }
 
-
     tasks.push({
         id: Date.now(),
         title: title,
@@ -166,49 +151,39 @@ taskForm.addEventListener("submit", (event) => {
         completed: false
     });
 
-
     saveTasks();
     renderTasks();
-
 
     taskTitleInput.value = "";
     taskError.classList.add("hidden");
 }); // fim - EL taskForm
-
 
 taskList.addEventListener("click", (event) => {
     let btn = event.target.closest("button");
 
     if (!btn) return;
 
-
     let li = btn.closest("li");
     let taskId = Number(li.dataset.id);
     let task = tasks.find(task => task.id === taskId);
 
-
     if (!task) return;
-
 
     if (btn.classList.contains("complete-btn")) {
         task.completed = !task.completed;
     }
 
-
     if (btn.classList.contains("delete-btn")) {
         tasks = tasks.filter(task => task.id !== taskId);
     }
 
-
     if (btn.classList.contains("edit-btn")) {
         let newTitle = prompt("Edit task title:", task.title);
-
 
         if (newTitle && newTitle.trim()) {
             task.title = newTitle.trim();
         }
     }
-
 
     saveTasks();
     renderTasks();
@@ -249,7 +224,14 @@ themeToggle.addEventListener(
 // Date and Time *************************************************
 function updateDateTime() {
     let now = new Date();
-    currentDatetime.textContent = now.toLocaleString("pt-PT", { dateStyle: "full", timeStyle: "short" });
+    currentDatetime.textContent = now.toLocaleString("en-GB", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+    });
 }
 
 // API - Weather *************************************************
