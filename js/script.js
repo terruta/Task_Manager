@@ -9,6 +9,7 @@ let logoutBtn = document.querySelector("#logout-button");
 let emailInput = document.querySelector("#email");
 let taskForm = document.querySelector("#task-form");
 let taskTitleInput = document.querySelector("#task-title");
+let taskPriorityInput = document.querySelector("#task-priority");
 let taskError = document.querySelector("#task-error");
 
 let taskList = document.querySelector("#task-list");
